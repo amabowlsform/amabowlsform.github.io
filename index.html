@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Acai Bowl</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lobster', cursive;
+            background-image: url('Imagenes/FONDO.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .menu-title {
+            color: #db009d;
+        }
+        .submit-btn, .save-btn {
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+        }
+        .main-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .price-strike {
+            text-decoration: line-through;
+            color: red;
+        }
+        .admin-controls {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white">
+
+<div class="main-container">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-wrap justify-center">
+            <div class="w-full text-center mb-12">
+                <h1 class="text-5xl menu-title">ACAI</h1>
+                <h2 class="text-4xl menu-title">ARMA TU BOWL</h2>
+            </div>
+
+            <div class="w-full mb-8">
+                <div class="flex justify-center">
+                    <div class="p-4 option-container">
+                        <div class="text-center">
+                            <label for="bombom" class="text-xl mb-2 menu-title">
+                                BOMBOM - 12oz <br>
+                                <span class="price-strike">S/ 20</span> - 16.90 soles <br>
+                                3 a 6 toppings
+                            </label>
+                            <div>
+                                <input type="radio" id="bombom" class="checkmark" name="size" value="BOMBOM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 option-container">
+                        <div class="text-center">
+                            <label for="tentacion" class="text-xl mb-2 menu-title">
+                                TENTACION - 14oz <br>
+                                <span class="price-strike">S/ 24</span> - 18.90 soles <br>
+                                4 a 7 toppings
+                            </label>
+                            <div>
+                                <input type="radio" id="tentacion" class="checkmark" name="size" value="TENTACION">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 option-container">
+                        <div class="text-center">
+                            <label for="elpoderoso" class="text-xl mb-2 menu-title">
+                                PODEROSO - 16oz <br>
+                                <span class="price-strike">S/ 26</span> - 21.9 soles <br>
+                                4 a 8 toppings
+                            </label>
+                            <div>
+                                <input type="radio" id="elpoderoso" class="checkmark" name="size" value="EL PODEROSO">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full">
+                <div class="flex flex-wrap justify-around">
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">FRUTAS</h4>
+                        <div>
+                            <input type="checkbox" id="plátano" class="checkmark fruit-checkbox" name="fruits" value="plátano">
+                            <label for="plátano" class="menu-title ml-2">Plátano</label>
+                            <br>
+                            <input type="checkbox" id="fresa" class="checkmark fruit-checkbox" name="fruits" value="fresa">
+                            <label for="fresa" class="menu-title ml-2">Fresa</label>
+                            <br>
+                            <input type="checkbox" id="mango" class="checkmark fruit-checkbox" name="fruits" value="mango">
+                            <label for="mango" class="menu-title ml-2">Mango</label>
+                            <br>
+                            <input type="checkbox" id="piña" class="checkmark fruit-checkbox" name="fruits" value="piña">
+                            <label for="piña" class="menu-title ml-2">Piña</label>
+                            <br>
+                            <input type="checkbox" id="papaya" class="checkmark fruit-checkbox" name="fruits" value="papaya">
+                            <label for="papaya" class="menu-title ml-2">Papaya</label>
+                            <br>
+                            <input type="checkbox" id="blueberries" class="checkmark fruit-checkbox" name="fruits" value="blueberries">
+                            <label for="blueberries" class="menu-title ml-2">Blueberries</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">FRUTOS SECOS</h4>
+                        <div>
+                            <input type="checkbox" id="pecanas" class="checkmark fruit-checkbox" name="dry_fruits" value="pecanas">
+                            <label for="pecanas" class="menu-title ml-2">Pecanas</label>
+                            <br>
+                            <input type="checkbox" id="nueces" class="checkmark fruit-checkbox" name="dry_fruits" value="nueces">
+                            <label for="nueces" class="menu-title ml-2">Nueces</label>
+                            <br>
+                            <input type="checkbox" id="arandanos deshid" class="checkmark fruit-checkbox" name="dry_fruits" value="arandanos deshid">
+                            <label for="arandanos deshid" class="menu-title ml-2">Arándanos Deshidratados</label>
+                            <br>
+                            <input type="checkbox" id="almendras laminadas" class="checkmark fruit-checkbox" name="dry_fruits" value="almendras laminadas">
+                            <label for="almendras laminadas" class="menu-title ml-2">Almendras laminadas</label>
+                            <br>
+                            <input type="checkbox" id="castañas laminadas" class="checkmark fruit-checkbox" name="dry_fruits" value="castañas laminadas">
+                            <label for="castañas laminadas" class="menu-title ml-2">Castañas laminadas</label>
+                            <br>
+                            <input type="checkbox" id="coco rallado" class="checkmark fruit-checkbox" name="dry_fruits" value="coco rallado">
+                            <label for="coco rallado" class="menu-title ml-2">Coco rallado</label>
+                            <br>
+                            <input type="checkbox" id="coco en laminas" class="checkmark fruit-checkbox" name="dry_fruits" value="coco en laminas">
+                            <label for="coco en laminas" class="menu-title ml-2">Coco en laminas</label>
+                            <br>
+                            <input type="checkbox" id="mani" class="checkmark fruit-checkbox" name="dry_fruits" value="mani">
+                            <label for="mani" class="menu-title ml-2">Maní</label>
+                            <br>
+                            <input type="checkbox" id="granola" class="checkmark fruit-checkbox" name="dry_fruits" value="granola">
+                            <label for="granola" class="menu-title ml-2">Granola</label>
+                            <br>
+                            <input type="checkbox" id="chia" class="checkmark fruit-checkbox" name="dry_fruits" value="chia">
+                            <label for="chia" class="menu-title ml-2">Chia</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">JARABES</h4>
+                        <div>
+                            <input type="checkbox" id="miel" class="checkmark fruit-checkbox" name="jarabes" value="miel">
+                            <label for="miel" class="menu-title ml-2">Miel</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="mantequilla de mani" class="checkmark fruit-checkbox" name="jarabes" value="mantequilla de mani">
+                            <label for="mantequilla de mani" class="menu-title ml-2">Mantequilla de maní</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cacao nibs" class="checkmark fruit-checkbox" name="jarabes" value="cacao nibs">
+                            <label for="cacao nibs" class="menu-title ml-2">Cacao nibs</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="manjar blanco" class="checkmark fruit-checkbox" name="jarabes" value="manjar blanco">
+                            <label for="manjar blanco" class="menu-title ml-2">Manjar blanco</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="leche condensada" class="checkmark fruit-checkbox" name="jarabes" value="leche condensada">
+                            <label for="leche condensada" class="menu-title ml-2">Leche condensada</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="algarrobina" class="checkmark fruit-checkbox" name="jarabes" value="algarrobina">
+                            <label for="algarrobina" class="menu-title ml-2">Algarrobina</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="chocomani" class="checkmark fruit-checkbox" name="jarabes" value="chocomani">
+                            <label for="chocomani" class="menu-title ml-2">Chocomani (+2 soles)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full text-center mt-8">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full submit-btn">
+                    Enviar
+                </button>
+                <span id="total-price" class="text-2xl ml-4"></span>
+            </div>
+            <div class="w-full text-center mt-4">
+                <span id="error-message" class="text-red-500"></span>
+            </div>
+            <div class="w-full text-center mt-4">
+                <input type="password" id="admin-password" placeholder="Enter Admin Password" class="bg-gray-200 p-2 rounded">
+                <button id="admin-login" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">
+                    Login as Admin
+                </button>
+            </div>
+            <div class="admin-controls">
+                <h2 class="text-4xl menu-title text-center">Admin Controls</h2>
+                <div class="flex flex-wrap justify-around">
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">Desactivar Frutas</h4>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="plátano">
+                            <label for="plátano" class="menu-title ml-2">Plátano</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="fresa">
+                            <label for="fresa" class="menu-title ml-2">Fresa</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="mango">
+                            <label for="mango" class="menu-title ml-2">Mango</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="piña">
+                            <label for="piña" class="menu-title ml-2">Piña</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="papaya">
+                            <label for="papaya" class="menu-title ml-2">Papaya</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="blueberries">
+                            <label for="blueberries" class="menu-title ml-2">Blueberries</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">Desactivar Frutos Secos</h4>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="pecanas">
+                            <label for="pecanas" class="menu-title ml-2">Pecanas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="nueces">
+                            <label for="nueces" class="menu-title ml-2">Nueces</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="arandanos deshid">
+                            <label for="arandanos deshid" class="menu-title ml-2">Arándanos Deshidratados</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="almendras laminadas">
+                            <label for="almendras laminadas" class="menu-title ml-2">Almendras laminadas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="castañas laminadas">
+                            <label for="castañas laminadas" class="menu-title ml-2">Castañas laminadas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="coco rallado">
+                            <label for="coco rallado" class="menu-title ml-2">Coco rallado</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="coco en laminas">
+                            <label for="coco en laminas" class="menu-title ml-2">Coco en laminas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="mani">
+                            <label for="mani" class="menu-title ml-2">Maní</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="granola">
+                            <label for="granola" class="menu-title ml-2">Granola</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="chia">
+                            <label for="chia" class="menu-title ml-2">Chia</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">Desactivar Jarabes</h4>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="miel">
+                            <label for="miel" class="menu-title ml-2">Miel</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="mantequilla de mani">
+                            <label for="mantequilla de mani" class="menu-title ml-2">Mantequilla de maní</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="cacao nibs">
+                            <label for="cacao nibs" class="menu-title ml-2">Cacao nibs</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="manjar blanco">
+                            <label for="manjar blanco" class="menu-title ml-2">Manjar blanco</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="leche condensada">
+                            <label for="leche condensada" class="menu-title ml-2">Leche condensada</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="algarrobina">
+                            <label for="algarrobina" class="menu-title ml-2">Algarrobina</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="chocomani">
+                            <label for="chocomani" class="menu-title ml-2">Chocomani (+2 soles)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button id="save-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full save-btn">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const submitButton = document.querySelector('button.submit-btn');
+        const saveButton = document.getElementById('save-btn');
+        const errorMessageElement = document.getElementById('error-message');
+        const adminButton = document.getElementById('admin-login');
+        const adminControls = document.querySelector('.admin-controls');
+        const adminCheckboxes = document.querySelectorAll('.admin-checkbox');
+        const adminPasswordInput = document.getElementById('admin-password');
+
+        // Cargar el estado de GitHub
+        fetch('https://amabowlsform.github.io/acai-bowl-menu/data/checkbox-state.json')
+            .then(response => response.json())
+            .then(state => {
+                adminCheckboxes.forEach(checkbox => {
+                    if (state[checkbox.dataset.target]) {
+                        checkbox.checked = true;
+                        const targetCheckbox = document.querySelector(`.fruit-checkbox[value="${checkbox.dataset.target}"]`);
+                        if (targetCheckbox) {
+                            targetCheckbox.disabled = true;
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error al cargar el estado:', error));
+
+        adminButton.addEventListener('click', () => {
+            const password = adminPasswordInput.value;
+            if (password === '123') {
+                adminControls.style.display = 'block';
+            } else {
+                alert("Incorrect password!");
+            }
+        });
+
+        adminCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (event) => {
+                const targetValue = event.target.dataset.target;
+                const targetCheckbox = document.querySelector(`.fruit-checkbox[value="${targetValue}"]`);
+                if (targetCheckbox) {
+                    targetCheckbox.disabled = event.target.checked;
+                }
+            });
+        });
+
+        saveButton.addEventListener('click', () => {
+            saveAdminState();
+        });
+
+        function saveAdminState() {
+            const state = {};
+            adminCheckboxes.forEach(checkbox => {
+                state[checkbox.dataset.target] = checkbox.checked;
+            });
+
+            // Guardar en localStorage para pruebas locales
+            localStorage.setItem('adminState', JSON.stringify(state));
+
+            // Enviar el estado a GitHub Actions
+            const githubToken = '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';  // Reemplaza con tu GitHub Token
+            const owner = 'amabowlsform';  // Tu nombre de usuario en GitHub
+            const repo = 'acai-bowl-menu';  // El nombre de tu repositorio
+            const url = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `token ${githubToken}`,
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    event_type: 'update-state',
+                    client_payload: {
+                        state: JSON.stringify(state, null, 2)
+                    }
+                })
+            }).then(response => {
+                if (response.ok) {
+                    location.reload();  // Recargar la página después de guardar el estado
+                } else {
+                    console.error('Error al guardar el estado en GitHub');
+                }
+            }).catch(error => {
+                console.error('Error al conectar con el servidor:', error);
+            });
+        }
+
+        function loadAdminState() {
+            const state = JSON.parse(localStorage.getItem('adminState') || '{}');
+            adminCheckboxes.forEach(checkbox => {
+                if (state[checkbox.dataset.target]) {
+                    checkbox.checked = true;
+                    const targetCheckbox = document.querySelector(`.fruit-checkbox[value="${checkbox.dataset.target}"]`);
+                    if (targetCheckbox) {
+                        targetCheckbox.disabled = true;
+                    }
+                }
+            });
+        }
+
+        function showError(message) {
+            errorMessageElement.textContent = message;
+        }
+
+        function clearError() {
+            errorMessageElement.textContent = '';
+        }
+
+        function validateToppingsSelection() {
+            clearError();
+            const selectedSizeInput = document.querySelector('input[name="size"]:checked');
+            if (!selectedSizeInput) {
+                showError("Por favor, seleccione el tamaño del bowl.");
+                return false;
+            }
+
+            const selectedSize = selectedSizeInput.value;
+            let minToppings, maxToppings;
+            switch (selectedSize) {
+                case 'BOMBOM':
+                    minToppings = 3;
+                    maxToppings = 6;
+                    break;
+                case 'TENTACION':
+                    minToppings = 4;
+                    maxToppings = 7;
+                    break;
+                case 'EL PODEROSO':
+                    minToppings = 4;
+                    maxToppings = 8;
+                    break;
+                default:
+                    showError("Ha ocurrido un error al seleccionar el tamaño del bowl.");
+                    return false;
+            }
+
+            const selectedToppings = Array.from(document.querySelectorAll('input.fruit-checkbox:checked'))
+                .filter(checkbox => !checkbox.disabled).length;
+
+            if (selectedToppings < minToppings || selectedToppings > maxToppings) {
+                showError(`Para el tamaño ${selectedSize}, por favor seleccione entre ${minToppings} y ${maxToppings} toppings.`);
+                return false;
+            }
+
+            return true;
+        }
+
+        submitButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (!validateToppingsSelection()) return;
+
+            let message = "Hola, me gustaría pedir un acai bowl tamaño ";
+            const selectedSize = document.querySelector('input[name="size"]:checked').value;
+            message += selectedSize + " con:";
+
+            function addToppings(category, name) {
+                const checkboxes = Array.from(document.querySelectorAll(`input[name="${category}"]:checked`))
+                    .filter(checkbox => !checkbox.disabled);
+                let toppings = checkboxes.map(cb => cb.value);
+                if (toppings.length > 0) {
+                    message += `\n${name}: ${toppings.join(', ')}`;
+                }
+            }
+
+            addToppings('fruits', 'Frutas');
+            addToppings('dry_fruits', 'Frutos secos');
+            addToppings('jarabes', 'Jarabes');
+
+            const encodedMessage = encodeURIComponent(message);
+            const phoneNumber = '+51976297887';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        const bowlPrices = {
+            BOMBOM: '16.90',
+            TENTACION: '18.90',
+            EL_PODEROSO: '21.90'
+        };
+
+        document.querySelectorAll('input[name="size"], input[type="checkbox"]').forEach(input => {
+            input.addEventListener('change', updatePrice);
+        });
+
+        function updatePrice() {
+            const selectedSize = document.querySelector('input[name="size"]:checked')?.value;
+            const totalPriceElement = document.getElementById('total-price');
+
+            let basePrice = parseFloat(bowlPrices[selectedSize?.replace(/\s+/g, '_').toUpperCase()] || '0');
+
+            if (document.querySelector('input[name="chocomani"]:checked')) {
+                basePrice += 2; // Agrega 2 soles si Chocomani está seleccionado.
+            }
+
+            totalPriceElement.textContent = `Total: S/ ${basePrice.toFixed(2)} soles`;
+        }
+
+        loadAdminState();
+    });
+</script>
+
+</body>
+</html>
