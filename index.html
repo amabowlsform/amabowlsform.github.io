@@ -181,6 +181,114 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="w-full text-center mt-8">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full submit-btn">
+                    Enviar
+                </button>
+                <span id="total-price" class="text-2xl ml-4"></span>
+            </div>
+            <div class="w-full text-center mt-4">
+                <span id="error-message" class="text-red-500"></span>
+            </div>
+            <div class="w-full text-center mt-4">
+                <input type="password" id="admin-password" placeholder="Enter Admin Password" class="bg-gray-200 p-2 rounded">
+                <button id="admin-login" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">
+                    Login as Admin
+                </button>
+            </div>
+            <div class="admin-controls">
+                <h2 class="text-4xl menu-title text-center">Admin Controls</h2>
+                <div class="flex flex-wrap justify-around">
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">Desactivar Frutas</h4>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="plátano">
+                            <label for="plátano" class="menu-title ml-2">Plátano</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="fresa">
+                            <label for="fresa" class="menu-title ml-2">Fresa</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="mango">
+                            <label for="mango" class="menu-title ml-2">Mango</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="piña">
+                            <label for="piña" class="menu-title ml-2">Piña</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="papaya">
+                            <label for="papaya" class="menu-title ml-2">Papaya</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="blueberries">
+                            <label for="blueberries" class="menu-title ml-2">Blueberries</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">Desactivar Frutos Secos</h4>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="pecanas">
+                            <label for="pecanas" class="menu-title ml-2">Pecanas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="nueces">
+                            <label for="nueces" class="menu-title ml-2">Nueces</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="arandanos deshid">
+                            <label for="arandanos deshid" class="menu-title ml-2">Arándanos Deshidratados</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="almendras laminadas">
+                            <label for="almendras laminadas" class="menu-title ml-2">Almendras laminadas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="castañas laminadas">
+                            <label for="castañas laminadas" class="menu-title ml-2">Castañas laminadas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="coco rallado">
+                            <label for="coco rallado" class="menu-title ml-2">Coco rallado</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="coco en laminas">
+                            <label for="coco en laminas" class="menu-title ml-2">Coco en laminas</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="mani">
+                            <label for="mani" class="menu-title ml-2">Maní</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="granola">
+                            <label for="granola" class="menu-title ml-2">Granola</label>
+                            <br>
+                            <input type="checkbox" class="admin-checkbox" data-target="chia">
+                            <label for="chia" class="menu-title ml-2">Chia</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <h4 class="text-xl mb-2 menu-title">Desactivar Jarabes</h4>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="miel">
+                            <label for="miel" class="menu-title ml-2">Miel</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="mantequilla de mani">
+                            <label for="mantequilla de mani" class="menu-title ml-2">Mantequilla de maní</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="cacao nibs">
+                            <label for="cacao nibs" class="menu-title ml-2">Cacao nibs</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="manjar blanco">
+                            <label for="manjar blanco" class="menu-title ml-2">Manjar blanco</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="leche condensada">
+                            <label for="leche condensada" class="menu-title ml-2">Leche condensada</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="algarrobina">
+                            <label for="algarrobina" class="menu-title ml-2">Algarrobina</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="admin-checkbox" data-target="chocomani">
+                            <label for="chocomani" class="menu-title ml-2">Chocomani (+2 soles)</label>
+                        </div>
+                    </div>
+                </div>
                 <div class="text-center mt-4">
                     <button id="save-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full save-btn">
                         Guardar
@@ -202,7 +310,7 @@
         const adminPasswordInput = document.getElementById('admin-password');
 
         // Cargar el estado de GitHub
-        fetch('https://amabowlsform.github.io/amabowlsform.github.io/data/checkbox-state.json')
+        fetch('https://amabowlsform.github.io/acai-bowl-menu/data/checkbox-state.json')
             .then(response => response.json())
             .then(state => {
                 adminCheckboxes.forEach(checkbox => {
@@ -252,7 +360,7 @@
             // Enviar el estado a GitHub Actions
             const githubToken = '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';  // Reemplaza con tu GitHub Token
             const owner = 'amabowlsform';  // Tu nombre de usuario en GitHub
-            const repo = 'amabowlsform.github.io';  // El nombre de tu repositorio
+            const repo = 'acai-bowl-menu';  // El nombre de tu repositorio
             const url = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
 
             fetch(url, {
