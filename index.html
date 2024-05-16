@@ -344,48 +344,47 @@
             });
         });
 
-        saveButton.addEventListener('click', () => {
-            saveAdminState();
-        });
+   saveButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    saveAdminState();
+});
 
-        function saveAdminState() {
-            const state = {};
-            adminCheckboxes.forEach(checkbox => {
-                state[checkbox.dataset.target] = checkbox.checked;
-            });
+function saveAdminState() {
+    const state = {};
+    adminCheckboxes.forEach(checkbox => {
+        state[checkbox.dataset.target] = checkbox.checked;
+    });
 
-            // Guardar en localStorage para pruebas locales
-            localStorage.setItem('adminState', JSON.stringify(state));
+    // Enviar el estado a GitHub Actions
+    const githubToken = 'YOUR_GITHUB_TOKEN';  // Reemplaza con tu GitHub Token
+    const owner = 'amabowlsform';  // Tu nombre de usuario en GitHub
+    const repo = 'acai-bowl-menu';  // El nombre de tu repositorio
+    const url = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
 
-            // Enviar el estado a GitHub Actions
-            const githubToken = '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';  // Reemplaza con tu GitHub Token
-            const owner = 'amabowlsform';  // Tu nombre de usuario en GitHub
-            const repo = 'acai-bowl-menu';  // El nombre de tu repositorio
-            const url = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
-
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `token ${githubToken}`,
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    event_type: 'update-state',
-                    client_payload: {
-                        state: JSON.stringify(state, null, 2)
-                    }
-                })
-            }).then(response => {
-                if (response.ok) {
-                    location.reload();  // Recargar la página después de guardar el estado
-                } else {
-                    console.error('Error al guardar el estado en GitHub');
-                }
-            }).catch(error => {
-                console.error('Error al conectar con el servidor:', error);
-            });
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            event_type: 'update-state',
+            client_payload: {
+                state: JSON.stringify(state, null, 2)
+            }
+        })
+    }).then(response => {
+        if (response.ok) {
+            location.reload();  // Recargar la página después de guardar el estado
+        } else {
+            console.error('Error al guardar el estado en GitHub');
         }
+    }).catch(error => {
+        console.error('Error al conectar con el servidor:', error);
+    });
+}
+
 
         function loadAdminState() {
             const state = JSON.parse(localStorage.getItem('adminState') || '{}');
